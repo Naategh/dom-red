@@ -32,7 +32,7 @@ optional arguments:
 - Verbose output
 
 ## Examples
-```powershell 
+```basic 
 $ python dom-red.py -d /root/domains.txt -p /root/payloads.list -i
 $ python dom-red.py -d /root/domains.txt -p /root/payloads.txt -v -i
 ```
