@@ -4,7 +4,7 @@ Small script to check a list of domains against open redirect vulnerability.
 ## Install
 ```basic
 $ git clone https://github.com/Naategh/dom-red.git
-$ cd dom-red && install -r requirements.txt
+$ cd dom-red && pip install -r requirements.txt
 $ python dom-red.py -h
 
 ________                       ________     _________
