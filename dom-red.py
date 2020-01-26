@@ -48,7 +48,7 @@ def main():
                         else:
                             URL = line2 + payload
 
-                        response = requests.get(URL, verify=False)
+                        response = requests.get(URL, verify=False, timeout=5)
                         if args.verbose:                     
                             print(URL.replace("\n", "") + RED + " ++> " + str(response.status_code) + "\n" + END)
                         else:
@@ -66,6 +66,10 @@ def main():
                                 pass
                         except:
                             print("Connection Error!")
+
+                    except requests.exceptions.RequestException:
+                        print(RED + "Requests error: " + URL + "\nContinue...\n" + END)
+                        continue
 
                     except KeyboardInterrupt:
                         print("Shutdown...")
