@@ -1,5 +1,5 @@
 #!/usr/bin/env python
- # -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 import requests
 import sys
 import urllib3
@@ -9,7 +9,6 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 RED = "\033[91m"
 BLUE = "\033[36m"
-GREEN = '\033[32m'
 WHITE = '\033[37m'
 END = "\033[0m"
 
@@ -55,7 +54,7 @@ def main():
                             pass
 
                         try:
-                            if response.history:
+                            if response.history and not str(response.url).startswith(line2):
 
                                 for resp in response.history:
 
@@ -64,15 +63,15 @@ def main():
                                 print("Final Destination: " + BLUE + response.url + "\n" + END)
                             else:
                                 pass
-                        except:
-                            print("Connection Error!")
+                        except Exception as e:
+                            print("Connection Error: ", e)
 
                     except requests.exceptions.RequestException:
                         print(RED + "Requests error: " + URL + "\nContinue...\n" + END)
                         continue
 
                     except KeyboardInterrupt:
-                        print("Shutdown...")
+                        print(RED + "Shutdown..." + END)
                         exit(0)
 
 if __name__ == '__main__':
@@ -89,3 +88,4 @@ if __name__ == '__main__':
     payloads = args.payload
     
     main()
+
