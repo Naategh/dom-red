@@ -61,6 +61,8 @@ def main():
                                     print("Redirect Found: " + WHITE +  resp.url + END)
                                     
                                 print("Final Destination: " + BLUE + response.url + "\n" + END)
+                                if args.output:
+                                    res.write(resp.url + " ++> " + response.url + "\n\n")
                             else:
                                 pass
                         except Exception as e:
@@ -82,10 +84,14 @@ if __name__ == '__main__':
     parser.add_argument('-p', '--payload', help='Path of payloads list', required=True)
     parser.add_argument('-i', '--include', help="Include a slash at end of URLs", action='store_true')
     parser.add_argument('-v', '--verbose', help="Show more results", action="store_true")
+    parser.add_argument('-o', '--output', help="Output file, ex: res.txt")
     
     args = parser.parse_args()
     file = args.domain
     payloads = args.payload
+    output = args.output
+    res = open(output, "a+")
     
     main()
+
 
