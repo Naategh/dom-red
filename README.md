@@ -30,11 +30,12 @@ optional arguments:
 ## Features
 - Include a slash at end of URLs to avoid some errors
 - Verbose output
+- Saving success results
 
 ## Examples
 ```basic 
 $ python dom-red.py -d /root/domains.txt -p /root/payloads.list -i
-$ python dom-red.py -d /root/domains.txt -p /root/payloads.txt -v -i
+$ python dom-red.py -d /root/domains.txt -p /root/payloads.txt -v -i -o ./res.txt
 ```
 
 ## How it can be useful?
