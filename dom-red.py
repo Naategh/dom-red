@@ -61,7 +61,7 @@ def main():
                                     print("Redirect Found: " + WHITE +  resp.url + END)
                                     
                                 print("Final Destination: " + BLUE + response.url + "\n" + END)
-                                if args.output:
+                                if output:
                                     res.write(resp.url + " ++> " + response.url + "\n\n")
                             else:
                                 pass
@@ -90,7 +90,8 @@ if __name__ == '__main__':
     file = args.domain
     payloads = args.payload
     output = args.output
-    res = open(output, "a+")
+    if output:
+        res = open(output, "a+")
     
     main()
 
