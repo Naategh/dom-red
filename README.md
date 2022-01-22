@@ -44,5 +44,3 @@ $ python dom-red.py -d /root/domains.txt -p /root/payloads.txt -v -i -o ./res.tx
 
 ## Contact
 - Email: manamtabeshekan@gmail.com
-- Telegram: [@Naategh](http://t.me/Naategh)
-- Twitter: [@Naategh_](https://twitter.com/Naategh_)
